@@ -1,6 +1,3 @@
-// alert('er');
-
-
 chrome.storage.local.get(["browseHistory"], function(items){
     if(Object.keys(items.browseHistory).length===0){
         items.browseHistory = [];
