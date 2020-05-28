@@ -1,0 +1,16 @@
+{
+  "name": "history tacker",
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts" : [
+    {
+      "matches":  ["https://jira.cengage.com/browse/CXP*",
+        "http://stash.corp.web:7990/projects*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
