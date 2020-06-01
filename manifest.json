@@ -1,5 +1,5 @@
 {
-  "name": "history tacker",
+  "name": "ebay snipper",
   "version": "1.0",
   "manifest_version": 2,
   "permissions": [
@@ -7,14 +7,9 @@
   ],
   "content_scripts" : [
     {
-      "matches":  ["https://jira.cengage.com/browse/CXP*",
-        "http://stash.corp.web:7990/projects*"
+      "matches":  ["https://pay.ebay.com/*"
       ],
-      "js": ["content.js"]
+      "js": ["jquery.js","content.js"]
     }
-  ],
-  "browser_action": {
-    "default_popup": "popup.html",
-    "default_title": "history"
-  }
+  ]
 }
