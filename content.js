@@ -1,7 +1,7 @@
 let url = "https://pay.ebay.com/rxo?action=create&rypsvc=true&pagename=ryp&TransactionId=-1&shippingcode=USPSPriority&buyerselectedsc=false&item=";
 // let id1 = "124024800061";
 let id1 = "123832525898";
-let id2 = "122631362598";
+let id2 = "123839721136";
 let goodStatus = "success";
 
 if("https://pay.ebay.com/rxo?action=view&sessionid="===window.location.href){
@@ -9,7 +9,7 @@ if("https://pay.ebay.com/rxo?action=view&sessionid="===window.location.href){
         jQuery.get(url + id1, function(data, status){
             console.log("called out")
             if(status===goodStatus && data.indexOf("CONFIRM_AND_PAY_BUTTON")>-1){
-                console.log('added to chart: '+'123832525898' );
+                console.log('added to chart: '+id1 );
                 clearInterval(timer);
                 // chrome.tabs.create({ url: url + id1 });
                 window.location.href = url+id1;
@@ -17,7 +17,7 @@ if("https://pay.ebay.com/rxo?action=view&sessionid="===window.location.href){
         });
         jQuery.get(url + id2, function(data, status){
             if(status===goodStatus && data.indexOf("CONFIRM_AND_PAY_BUTTON")>-1){
-                console.log('added to chart: '+'122631362598' );
+                console.log('added to chart: '+id2 );
                 clearInterval(timer);
                 // chrome.tabs.create({ url: url + id2 });
                 window.location.href = url+id2;
