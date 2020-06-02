@@ -24,7 +24,7 @@ if("https://pay.ebay.com/rxo?action=view&sessionid="===window.location.href){
             }
         });
     }
-    let timer = setInterval(check, 4000);
+    let timer = setInterval(check, 2000);
     jQuery(window).unload( function () {
         clearInterval(timer);
     } );
