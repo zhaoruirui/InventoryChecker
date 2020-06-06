@@ -1,12 +1,13 @@
 let url = "https://pay.ebay.com/rxo?action=create&rypsvc=true&pagename=ryp&TransactionId=-1&shippingcode=USPSPriority&buyerselectedsc=false&item=";
 
-// jQuery(".confirm-and-pay-wrapper button").click();
+jQuery(".confirm-and-pay-wrapper button").click();
 
 
 if(window.location.href==="https://pay.ebay.com/rxo?action=view&sessionid="){
     let frag = document.createDocumentFragment();
     let select = document.createElement("select");
     let button = document.createElement("button");
+    button.innerHTML = "Start";
 
     select.options.add( new Option("Hp pink 123832525898","123832525898", true, true) );
     select.options.add( new Option("hp blue 123839721136","123839721136") );
@@ -36,7 +37,7 @@ if(window.location.href==="https://pay.ebay.com/rxo?action=view&sessionid="){
                 window.location.href = url + data.itemId;
             });
         }
-        setTimeout(reload, 400);
+        setTimeout(reload, 500);
     }
 }
 
