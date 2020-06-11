@@ -2,10 +2,11 @@ let url = "https://pay.ebay.com/rxo?action=create&rypsvc=true&pagename=ryp&Trans
 
 jQuery(".confirm-and-pay-wrapper button").click();
 
-
 if(window.location.href==="https://pay.ebay.com/rxo?action=view&sessionid="){
     let frag = document.createDocumentFragment();
     let select = document.createElement("select");
+    let textInput = document.createElement("INPUT");
+    textInput.setAttribute("type", "text");
     let button = document.createElement("button");
     button.innerHTML = "Start";
 
@@ -23,12 +24,17 @@ if(window.location.href==="https://pay.ebay.com/rxo?action=view&sessionid="){
 
     let itemId ="123832525898";
     button.addEventListener("click", function () {
-        itemId = select.selectedOptions[0].value;
-        chrome.runtime.sendMessage({ text: select.selectedOptions[0].value }, function(){
+        if(textInput.value ===""){
+            itemId = select.selectedOptions[0].value;
+        }else{
+            itemId=textInput.value;
+        }
+        chrome.runtime.sendMessage({ text: itemId }, function(){
             window.location.href = url + itemId;
         })
     })
     frag.appendChild(select);
+    frag.appendChild(textInput);
     frag.appendChild(button);
     document.body.appendChild(frag);
 }else{
