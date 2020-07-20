@@ -2,9 +2,6 @@
   "name": "ebay snipper",
   "version": "1.0",
   "manifest_version": 2,
-  "permissions": [
-    "tabs"
-  ],
   "content_scripts" : [
     {
       "matches":  ["https://pay.ebay.com/*"
